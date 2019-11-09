@@ -1,0 +1,35 @@
+body{
+    font-size: 1rem;
+    background-color: aliceblue;
+}
+div.main{
+    margin: 0 auto;
+    width: 70vw;
+    padding: 2rem;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul li{
+    font-size: 1.9rem;
+    background-color: rgb(232, 247, 31);
+    width: 35rem;
+    height: 3rem;
+    padding: 1rem  auto 0.9rem auto;
+    margin-top: 7px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul i{
+    font-size: 2rem;
+}
+ion-icon{
+    cursor: pointer;
+    color: darkred;
+    margin-top: 1rem;
+    margin-left: 11rem;
+}
