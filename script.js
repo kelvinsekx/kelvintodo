@@ -7,7 +7,7 @@ let append     = document.getElementById('todo')
 inputValue.value=""
 
 function doSomething(){
-    let appendIt = append
+    // let appendIt = append
     if(inputValue.value !== ""){
         let node = document.createElement('li')
         var textnode =  document.createTextNode(inputValue.value)
@@ -17,16 +17,21 @@ function doSomething(){
 
         node.appendChild(textnode)
         node.appendChild(icon)
-        appendIt.appendChild(node)
-
-        let lar=appendIt.getElementsByTagName('li').length
+        append.appendChild(node)
+        
+        
+        let lar=append.getElementsByTagName('li').length
         submit.value='Add #'.concat(lar+1)
 
-        function deleteList(){
-            node.style.display="none"
-        }
         icon.addEventListener('click',deleteList)
+        function deleteList(){
+            append.removeChild(node)
+            submit.value='Add #'.concat(lar)
+         }
+
+        
     }
+    
     inputValue.value ='' 
 
 }
