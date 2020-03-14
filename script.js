@@ -1,40 +1,38 @@
-let inputValue = document.getElementById('do_it');
+let inputValue = document.getElementById('doIt');
 const submit   = document.querySelector('input.submit');
-let append     = document.getElementById('todo')
+let ul     = document.getElementById('todo')
+//
 
 
-
+//////""""""""""""""""""""""""""""
 inputValue.value=""
 
 function doSomething(){
     // let appendIt = append
     if(inputValue.value !== ""){
         let node = document.createElement('li')
-        var textnode =  document.createTextNode(inputValue.value)
-
+        node.classList.add("list-group-item","d-flex", "justify-content-between", "align-items-center")
         let icon = document.createElement('ion-icon');
         icon.name="close-circle-outline";
-
+        var textnode =  document.createTextNode(inputValue.value)
         node.appendChild(textnode)
         node.appendChild(icon)
-        append.appendChild(node)
+        ul.appendChild(node)
+
+        let lar=document.getElementsByTagName('li').length
         
-        
-        let lar=append.getElementsByTagName('li').length
-        submit.value='Add #'.concat(lar+1)
+        submit.value='Add #'+Number(lar+1)
 
         icon.addEventListener('click',deleteList)
         function deleteList(){
-            append.removeChild(node)
+            ul.removeChild(node)
+        
             submit.value='Add #'.concat(lar)
          }
-
-        
     }
-    
     inputValue.value ='' 
-
 }
+
 
 
 submit.addEventListener('click',doSomething)
